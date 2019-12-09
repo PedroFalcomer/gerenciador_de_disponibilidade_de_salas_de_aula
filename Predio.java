@@ -11,7 +11,8 @@
 
 	public class Predio 
 	{
-		private int horariofunc[];
+	    private int horariofech;	
+	    private int horariofunc[];
 	    private int qtd_salas;
 	    private String nome;
 	    private Instituicao instituicao;//faz a associação com instituições
@@ -33,8 +34,9 @@
 	    	w = Integer.parseInt(b);
 	    	horariofunc[0]= w;
 	    	for (i = 1 ;i < p; i ++) {
-	    		horariofunc[i] = horariofunc[0]+200;// os horrios sairiam em 0800,1000,1200
-	    		System.out.println("o horario de funcionamento do prédio e de"+ horariofunc[0] + "-" + horariofunc[i]);
+	    		horariofunc[i] = horariofunc[0]+200;// os horarios sairiam em 0800,1000,1200
+			horariofech =  horariofunc[p-1] + 200;
+	    		System.out.println("o horario de funcionamento do prédio e de"+ horariofunc[0] + "-" + horariofech);
 	    	}
 	    	
 	    }
@@ -118,6 +120,8 @@
 	            pw.println(this.instituicao.getNome());
 	            pw.println(this.nome);
 	            pw.println(this.qtd_salas);
+		    pw.println(this.horariofunc[0]);
+	            pw.println(this.horariofech);
 	            pw.flush();
 	            pw.close();
 	            fw.close();
