@@ -145,6 +145,7 @@
 	        System.out.printf("informe o numero de salas ");
 	        n = cn.nextInt();
 	        this.setQtd_salas(n);
+		this.definirHorariofunc();
 	        this.criaDiretPredio();
 	        this.Salvar();
 	        this.salvarLis();
