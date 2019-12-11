@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import service.Aluno;
-import service.Professor;
+import pessoa.Aluno;
+import pessoa.Professor;
 
 public class Turma 
 {
@@ -20,7 +20,17 @@ public class Turma
     private ArrayList <Aluno> alunos = new ArrayList<Aluno>();
     private Professor professor;
     private ArrayList <Ocupa> ocupacoes = new ArrayList<Ocupa>();
-
+    private int vagastotais, vagasrestantes;
+    
+    
+    public void calculaVagas() {
+    
+    vagastotais = getOcupacoes().get(0).getSala().getCapacidade();
+    vagasrestantes = vagastotais - numAlunos;
+   
+    System.out.println("total de vagas: "+ vagastotais + " , vagas preenchidas: " + numAlunos + " , vagas restantes: " + vagasrestantes + ".") ;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -157,6 +167,8 @@ public class Turma
             pwD.println(this.nome);
             pwD.println(this.numAlunos);
             pwD.println(this.numDiasSema);
+            pwD.println(this.vagastotais);
+            pwD.println(this.vagasrestantes);
             pwD.flush();
             pwD.close();
             fwD.close();
@@ -202,6 +214,7 @@ public class Turma
         System.out.printf("informe o número de dias na semana ");
         n = cn.nextInt();
         this.setNumDiasSema(n);
+        this.calculaVagas();
         this.criaDiretTurmaDisc();
         this.criaDiretTurmaProf();
         this.salvarLisDisc();
@@ -223,6 +236,8 @@ public class Turma
                 System.out.printf("Ocupação inválida ");
             }
         }
+        cn.close();
+        cn2.close();
         return this;
     }
     
