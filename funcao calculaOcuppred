@@ -1,0 +1,20 @@
+
+	    public int calculaOcuppred() {
+	    	/*numero de períodos de aula ocupados nas salas pelo
+	    	  numero de periodos de aula em que as salas estiveram vazias*/
+	    	
+	    	int hrocupadosala = 0;
+	    	int hrtotalsala, hrlivresala, i ;
+	    	hrtotalsala = quantaula * 5 * qtd_salas;
+	    	for (i=0; i < qtd_salas; i ++) {
+	    		hrocupadosala =	hrocupadosala + getSala().get(i).getOcupa().size();
+	    		}
+	    	
+	    	hrlivresala = hrtotalsala - hrocupadosala;
+	    	taxaocuppred = hrocupadosala/hrlivresala;
+	    	
+	    	
+	    	
+	    	return taxaocuppred;
+	    		
+	    	}
