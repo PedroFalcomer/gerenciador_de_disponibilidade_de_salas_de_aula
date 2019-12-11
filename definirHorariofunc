@@ -1,0 +1,25 @@
+public void definirHorariofunc() {
+	    	
+	    	 String a, b ;
+	    	 int i,p,w;
+	    	Scanner hf = new Scanner(System.in);
+	    	System.out.println("Defina a quantidade de aulas/dia no prédio.");
+	    	a = hf.nextLine();
+	    	p= Integer.parseInt(a);
+	    	quantaula = p;
+	    	horarioaula = new int [p];
+	    	System.out.println("Defina o horario de abertura do predio (hhmm).");
+	    	Scanner ha = new Scanner(System.in);
+	    	b = ha.nextLine();
+	    	w = Integer.parseInt(b);
+	    	horarioaula[0]= w;
+	    	horarioabr =  horarioaula[0];
+	    	for (i = 1 ;i < p; i ++) {
+	    		horarioaula[i] = horarioaula[0]+200;// os horrios sairiam em 0800,1000,1200
+	    		horariofech =  horarioaula[p-1] + 200 ;
+	    		System.out.println("o horario de funcionamento do prédio e de"+ horarioabr + "-" + horariofech);
+	    	}
+	    	
+	    hf.close();
+	    ha.close();
+	    }
