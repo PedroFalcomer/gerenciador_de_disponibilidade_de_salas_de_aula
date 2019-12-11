@@ -1,0 +1,7 @@
+public void calculaVagas() {
+    
+    vagastotais = getOcupacoes().get(0).getSala().getCapacidade();
+    vagasrestantes = vagastotais - numAlunos;
+   
+    System.out.println("total de vagas: "+ vagastotais + " , vagas preenchidas: " + numAlunos + " , vagas restantes: " + vagasrestantes + ".") ;
+    }
