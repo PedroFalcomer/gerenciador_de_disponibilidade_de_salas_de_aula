@@ -1,0 +1,10 @@
+ public int calcularOcupacao() {
+    	int hrocupados, hrtotais, hrlivres ;
+    	hrocupados = this.ocupacoes.size();
+    	hrtotais = this.getPredio().getQuantaula() * 5 ; 
+    	hrlivres = hrtotais- hrocupados;
+    	taxaocupa = hrocupados/hrlivres;
+    	return taxaocupa;
+    	
+    	
+    }
