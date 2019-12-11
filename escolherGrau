@@ -1,0 +1,25 @@
+public void escolherGrau(String gr) {
+    	System.out.println("Defina o Grau de formação acadêmica do aluno.");
+    	  	if(gr.equals("graduação")|| gr.equals("graduacao")) {
+    		setGrau("Graduação.");
+    		
+    	}
+    	  	if (gr.equals("extensão") || gr.equals("extensao")) {
+    			setGrau("Extensão.");
+    	  	
+    	  	}
+    	  	
+    	  	if (gr.equals("Lato Sensu")) {
+    	  		setGrau("Lato Sensu.");
+    }
+    	  	if(gr.equals("stricto sensu")) {
+        		setGrau("Stricto Sensu.");
+        		
+        	}
+    
+    	  	else {
+    	  		System.out.println("Erro! Digite um Grau de formação válido!");
+    	  	}
+    	  	System.out.println("O Grau de formação do aluno é " + this.grau);
+    	      
+    }
